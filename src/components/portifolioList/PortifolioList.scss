@@ -1,0 +1,18 @@
+@import '../../global.scss';
+
+.portifolioList{
+    font-size: 14px;
+    margin-right: 60px;
+    padding: 7px;
+    border-radius: 20px;
+    cursor: pointer;
+
+    &.active{
+        background-color: $mainColor;
+        color: whitesmoke;
+    }
+    // &:hover{
+    //     background-color: rgb(187, 216, 245);
+    //     color: $mainColor;
+    // }
+}
