@@ -13,10 +13,11 @@
     align-items: center;
     justify-content: center;
     transition: all 1s ease;
-    
+
     &.active {
         right: 0;
     }
+
     ul {
         margin: 0;
         padding: 0;

@@ -1,15 +1,15 @@
-.intro{
+.intro {
     background-color: white;
     display: flex;
 
-    .leftSide{
+    .leftSide {
         // background-color: crimson;
         flex: 0.5;
         overflow: hidden;
         margin-top: 20px;
         // border-radius: 50%;
 
-        .imageContainer{
+        .imageContainer {
             width: 700px;
             height: 700px;
             background-color: crimson;
@@ -19,17 +19,18 @@
             justify-content: center;
             float: right;
         }
-        img{
+
+        img {
             height: 70%;
             // border-radius: 50%;
         }
     }
 
-    .rightSide{
+    .rightSide {
         flex: 0.5;
         position: relative;
 
-        .wrapper{
+        .wrapper {
             width: 100%;
             height: 100%;
             padding-left: 50px;
@@ -37,51 +38,60 @@
             flex-direction: column;
             // align-items: center;
             justify-content: center;
+
             // margin-left: 5%;
-            h1{
+            h1 {
                 font-size: 40px;
                 font-weight: 300;
                 margin: 10px 0;
             }
-            h2{
+
+            h2 {
                 font-size: 25px;
                 font-weight: 300;
             }
-            h3{
+
+            h3 {
                 font-size: 20px;
                 font-weight: 300;
-                span{
+
+                span {
                     font-size: inherit;
                     // font-weight: inherit;
                     color: crimson;
                 }
-                .ityped-cursor{
+
+                .ityped-cursor {
                     animation: blink 1s infinite;
                 }
+
                 @keyframes blink {
-                    50%{
+                    50% {
                         opacity: 1;
                     }
-                    100%{
+
+                    100% {
                         opacity: 0;
                     }
                 }
             }
         }
-        a{
+
+        a {
             position: absolute;
             bottom: 20px;
             font-size: 30px;
             left: 40%;
 
-            i{
+            i {
                 width: 30px;
-                animation: arrowBlink 2s infinite; 
+                animation: arrowBlink 2s infinite;
             }
+
             @keyframes arrowBlink {
-                100%{
+                100% {
                     opacity: 0;
-                }  
+                }
             }
         }
     }

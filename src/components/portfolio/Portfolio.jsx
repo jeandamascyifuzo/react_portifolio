@@ -3,10 +3,10 @@ import PortifolioList from '../portifolioList/PortifolioList'
 import './Portfolio.scss'
 
 const Portfolio = () => {
-
+  
   const [selected, setSelected] = useState('featured')
 
-  const list=[
+  const list = [
     {
       id: "featured",
       title: "Featured"
@@ -29,13 +29,13 @@ const Portfolio = () => {
     <div className='portfolio' id='portfolio'>
       <h1>Portifolio</h1>
       <ul>
-        {list.map((item)=>(
-            <PortifolioList
-            title={item.title} 
-            active={selected === item.id} 
-            setSelected={setSelected} 
+        {list.map((item) => (
+          <PortifolioList
+            title={item.title}
+            active={selected === item.id}
+            setSelected={setSelected}
             id={item.id}
-            />
+          />
         ))}
       </ul>
       <div className="container">

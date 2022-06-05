@@ -9,7 +9,7 @@ const Intro = () => {
     init(textRef.current, {
       showCursor: true,
       backDelay: 2000,
-      backSpeed:60,
+      backSpeed: 60,
       strings: ['Developer', 'Designer', 'Content Creator'],
     });
   }, []);
@@ -28,7 +28,7 @@ const Intro = () => {
           <h3>Freelance <span ref={textRef}></span></h3>
         </div>
         <a href='#portfolio'>
-        <i className='bi bi-chevron-down'></i>
+          <i className='bi bi-chevron-down'></i>
         </a>
       </div>
     </div>

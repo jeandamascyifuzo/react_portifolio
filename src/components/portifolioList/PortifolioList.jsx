@@ -1,10 +1,10 @@
 import React from 'react'
 import './PortifolioList.scss'
 
-const PortifolioList = ({id, title, active, setSelected}) => {
+const PortifolioList = ({ id, title, active, setSelected }) => {
   return (
     <li className={active ? 'portifolioList active' : 'portifolioList'}
-    onclick = {()=> setSelected(id)}
+      onclick={() => setSelected(id)}
     >
       {title}
     </li>
