@@ -1,10 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+
 import PortifolioList from '../portifolioList/PortifolioList'
+import {
+  featuredPortifolio,
+  webAppPortifolio,
+  mobileAppPortifolio,
+  designPotifolio
+} from '../data/Data';
 import './Portfolio.scss'
 
 const Portfolio = () => {
-  
-  const [selected, setSelected] = useState('featured')
+
+  const [selected, setSelected] = useState('featured');
+  const [data, setData] = useState([])
 
   const list = [
     {
@@ -25,6 +33,27 @@ const Portfolio = () => {
     }
   ]
 
+  useEffect(() => {
+
+    switch (selected) {
+      case 'featured':
+        setData(featuredPortifolio);
+        break;
+      case 'webApp':
+        setData(webAppPortifolio);
+        break;
+      case 'mobileApp':
+        setData(mobileAppPortifolio);
+        break;
+      case 'design':
+        setData(designPotifolio);
+        break;
+      default:
+        setData(featuredPortifolio);
+    }
+
+  }, [selected])
+
   return (
     <div className='portfolio' id='portfolio'>
       <h1>Portifolio</h1>
@@ -39,30 +68,12 @@ const Portfolio = () => {
         ))}
       </ul>
       <div className="container">
-        <div className="item">
-          <img src="https://media.istockphoto.com/photos/woman-wearing-protective-mask-riding-a-bus-while-using-a-smartphone-picture-id1318613472?b=1&k=20&m=1318613472&s=170667a&w=0&h=KagVwAs8tFOZEwIzPwv4nazcGSs3CHQbXzY5mIPGUHc=" alt="Bus" />
-          <h3>Phantom</h3>
-        </div>
-        <div className="item">
-          <img src="https://media.istockphoto.com/photos/woman-wearing-protective-mask-riding-a-bus-while-using-a-smartphone-picture-id1318613472?b=1&k=20&m=1318613472&s=170667a&w=0&h=KagVwAs8tFOZEwIzPwv4nazcGSs3CHQbXzY5mIPGUHc=" alt="Bus" />
-          <h3>Phantom</h3>
-        </div>
-        <div className="item">
-          <img src="https://media.istockphoto.com/photos/woman-wearing-protective-mask-riding-a-bus-while-using-a-smartphone-picture-id1318613472?b=1&k=20&m=1318613472&s=170667a&w=0&h=KagVwAs8tFOZEwIzPwv4nazcGSs3CHQbXzY5mIPGUHc=" alt="Bus" />
-          <h3>Phantom</h3>
-        </div>
-        <div className="item">
-          <img src="https://media.istockphoto.com/photos/woman-wearing-protective-mask-riding-a-bus-while-using-a-smartphone-picture-id1318613472?b=1&k=20&m=1318613472&s=170667a&w=0&h=KagVwAs8tFOZEwIzPwv4nazcGSs3CHQbXzY5mIPGUHc=" alt="Bus" />
-          <h3>Phantom</h3>
-        </div>
-        <div className="item">
-          <img src="https://media.istockphoto.com/photos/woman-wearing-protective-mask-riding-a-bus-while-using-a-smartphone-picture-id1318613472?b=1&k=20&m=1318613472&s=170667a&w=0&h=KagVwAs8tFOZEwIzPwv4nazcGSs3CHQbXzY5mIPGUHc=" alt="Bus" />
-          <h3>Phantom</h3>
-        </div>
-        <div className="item">
-          <img src="https://media.istockphoto.com/photos/woman-wearing-protective-mask-riding-a-bus-while-using-a-smartphone-picture-id1318613472?b=1&k=20&m=1318613472&s=170667a&w=0&h=KagVwAs8tFOZEwIzPwv4nazcGSs3CHQbXzY5mIPGUHc=" alt="Bus" />
-          <h3>Phantom</h3>
-        </div>
+        {data.map((item) => (
+          <div className="item">
+            <img src={item.image} alt="Bus" />
+            <h3>{item.title}</h3>
+          </div>
+        ))}
       </div>
     </div>
   )
